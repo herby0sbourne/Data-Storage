@@ -1,0 +1,213 @@
+:root {
+  /*//////////////////////////////////////////////////////////////////
+    [ Neutral COLOR ]*/
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  background: url("../images/bg-mobile.png") no-repeat center / cover;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.bg {
+  background-color: var(--Dark-Blue);
+  width: 330px;
+  height: 200px;
+  border-radius: 10px 100px 10px 10px;
+  padding: 40px;
+  margin-bottom: 20px;
+  color: var(--Pale-Blue);
+}
+
+.bg:last-child {
+  border-radius: 10px;
+  margin-bottom: 0;
+}
+
+.logo {
+  margin-bottom: 30px;
+}
+
+.funtions {
+  display: flex;
+  align-items: center;
+}
+
+.funtion {
+  background-color: var(--Very-Dark-Blue);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-right: 18px;
+}
+
+.cloud-drive > p {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cloud-drive > p span {
+  color: #fff;
+}
+
+.progress-container {
+  position: relative;
+}
+
+.progress-container::before {
+  content: "";
+  position: absolute;
+  background-color: var(--Very-Dark-Blue);
+  height: 1.5rem;
+  width: 100%;
+  border-radius: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.progress-container::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 68.5%;
+}
+
+.progress-bar {
+  position: absolute;
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  height: 1rem;
+  width: 72%;
+  border-radius: 10px;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+}
+
+.usage-amount {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.storage-remaining {
+  background-color: #fff;
+  width: 180px;
+  height: 75px;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.storage-remaining p {
+  color: var(--Very-Dark-Blue);
+}
+
+.storage-remaining span {
+  color: var(--Grayish-Blue);
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+@media (min-width: 1280px) {
+  body {
+    background: url("../images/bg-desktop.png") no-repeat bottom center /
+      contain;
+    background-color: var(--Very-Dark-Blue);
+  }
+
+  .container {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .bg {
+    margin-right: 32px;
+    margin-bottom: 0;
+  }
+
+  .cloud-function {
+    width: 350px;
+  }
+
+  .cloud-drive > p {
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  .cloud-drive {
+    width: 540px;
+    position: relative;
+  }
+
+  .progress-container::after {
+    left: 70%;
+  }
+
+  .bg:last-child {
+    height: 150px;
+    margin-right: 0;
+  }
+
+  .storage-remaining {
+    position: absolute;
+    top: -40px;
+    right: 45px;
+    margin: 0;
+    z-index: 1;
+  }
+
+  .storage-remaining::after {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: #fff;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(150deg);
+    top: 20px;
+    right: -22px;
+    z-index: -1;
+  }
+}
